@@ -36,6 +36,10 @@ a {
   position: relative;
 }
 
+i:hover {
+  opacity: 0.7;
+}
+
 .link__hover-effect:after {
   content: "";
   position: absolute;
@@ -255,6 +259,10 @@ nav {
   margin-bottom: 135px;
 }
 
+.project:last-child {
+  margin-bottom: 40px;
+}
+
 .project__img {
   width: 100%;
   transition: all 500ms ease;
@@ -279,9 +287,11 @@ nav {
   opacity: 0;
   transition: opacity 450ms ease;
   z-index: 2;
+  transform: translateY(100%);
 }
 
 .project:hover .project__wrapper:before {
+  transform: translateY(0);
   opacity: 0.7;
 }
 
@@ -417,19 +427,35 @@ box-shadow: 0 8px 16px rgba(0, 0, 0, 0.16);
 @media (max-width:480px) {
   .nav__link:not(:last-child) {
     display: none;
+  }
 
+  .project__wrapper {
+    border-radius: 0;
+  }
+
+  .project__description {
+    padding: 0;
+    left: 0;
+    width: 100%;
   }
   .project__description--para {
     display: none;
   }
 
-  .project__description__links {
+  .project__description--links {
     display: flex;
-    flex-direction: center;
+    justify-content: center;
   }
 
   .project__description--title {
-    font-size: 24px;
+    font-size: 32px;
+    line-height: 1;
+    text-align: center;
   }
+}
+
+.project__description--sub-title {
+  text-align: center;
+  margin: 12px 0;
 }
 
